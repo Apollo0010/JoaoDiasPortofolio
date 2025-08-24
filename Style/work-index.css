@@ -174,26 +174,64 @@ h1 a {
     text-decoration: underline;  /* Adiciona sublinhado */
 }
 
+
+
+
+
+
+
 /* ========================================
    ESTILOS RESPONSIVOS (ecrãs pequenos)
    ======================================== */
 
 /* Para ecrãs menores que 768px */
 @media (max-width: 768px) {
-    /* Muda para uma só coluna */
+    /* Ajusta APENAS a altura da grelha para ocupar mais espaço */
     .grid-container {
-        grid-template-columns: 1fr;  /* Uma coluna só */
+        grid-template-columns: 1fr;        /* Mantém uma coluna */
+        height: calc(100vh - 80px);        /* REDUZ o espaço reservado (era 100px, agora 80px) */
+        gap: 0;                            /* Remove gap entre elementos */
     }
     
-    /* Reorganiza o rodapé verticalmente */
+    /* Reduz padding da área de trabalhos para aproveitar mais espaço */
+    .work-information {
+        padding: 20px 15px;                /* Reduz padding (era 30px) */
+    }
+    
+    /* Ajusta a área de imagens */
+    .image-display {
+        padding: 15px;                     /* Reduz padding (era 20px) */
+        height: 60vh;                      /* AUMENTA a altura (era não definida) */
+    }
+    
+    /* Ajusta o cabeçalho para ocupar menos espaço */
+    #top-content h1 {
+        margin-bottom: 15px;               /* Reduz margem (era 20px) */
+        padding: 10px 0;                   /* Adiciona padding mínimo */
+    }
+    
+    /* Mantém o rodapé compacto mas funcional */
     #bottom-content {
-        flex-direction: column;  /* Layout vertical */
-        gap: 20px;               /* 20px entre elementos */
-        text-align: center;      /* Texto centralizado */
+        flex-direction: row;               /* MANTÉM horizontal */
+        gap: 20px;                         /* Reduz gap */
+        padding: 15px 0;                   /* Reduz padding vertical */
     }
     
-    /* Reduz espaço entre links centrais */
+    /* Mantém a estrutura dos links do rodapé igual ao desktop */
     .footer-center {
-        gap: 20px;
+        gap: 25px;                         /* Reduz ligeiramente o gap */
+    }
+    
+    .footer-center p a {
+        font-size: 0.9em;                 /* Ligeiramente menor */
+    }
+    
+    /* Otimiza as linhas de trabalho para mobile */
+    .work-row {
+        margin-bottom: 6px;                /* Reduz espaço entre linhas */
+    }
+    
+    .work-name, .work-year, .work-type {
+        padding-right: 15px;               /* Reduz padding lateral */
     }
 }

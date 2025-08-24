@@ -74,35 +74,36 @@ a{
    ESTILOS RESPONSIVOS (para ecrãs pequenos)
    ======================================== */
    
-/* Quando o ecrã for menor que 768px (tablets e telemóveis) */
+
 @media (max-width: 768px) {
-    /* Ajusta o título principal para telas pequenas */
-    #top-content h1 {
-        font-size: 1.8rem; /* um pouco menor que o desktop */
-        margin-bottom: 15px;
-        padding: 0 10px;   /* evita que o texto fique colado nas bordas */
+    /* Mantém a estrutura principal igual ao desktop */
+    .main-page {
+        justify-content: space-between; /* MANTÉM a distribuição igual ao desktop */
+        padding-top: 0;                 /* REMOVE o padding-top que estava a criar espaço */
+        text-align: center;
     }
 
-    /* Ajusta o conteúdo inferior (links e parágrafos) */
+    /* Ajusta APENAS o tamanho do título, mantendo posicionamento */
+    #top-content h1 {
+        font-size: 1.6rem;     /* Ligeiramente menor mas não muito */
+        margin-bottom: 20px;   /* Mantém o mesmo espaçamento */
+        padding: 0 15px;       /* Só adiciona padding lateral */
+    }
+
+    /* Ajusta o conteúdo inferior mantendo a estrutura */
     #bottom-content {
-        flex-direction: column;  /* coloca os links/elementos em coluna */
-        gap: 15px;               /* reduz o espaçamento entre eles */
-        padding: 0 10px;         /* evita que o conteúdo toque as bordas */
+        flex-direction: row;    /* MANTÉM horizontal como no desktop */
+        gap: 15px;             /* Reduz ligeiramente o gap */
+        padding: 0 15px 20px;  /* Adiciona padding lateral e inferior */
+        flex-wrap: wrap;       /* Permite quebra de linha se necessário */
     }
 
     #bottom-content p {
-        font-size: 0.95rem;      /* ajusta um pouco menor que desktop */
-        margin-bottom: 20px;
+        font-size: 0.9rem;     /* Ligeiramente menor */
+        margin-bottom: 20px;   /* Reduz um pouco a margem */
     }
 
-    /* Centraliza todo o texto e conteúdo */
-    .main-page {
-        text-align: center;
-        justify-content: flex-start; /* o conteúdo começa do topo */
-        padding-top: 20px;           /* dá um pequeno espaçamento do topo */
-    }
-
-    /* Garante que a imagem de fundo cubra corretamente em telas pequenas */
+    /* Garante que a imagem de fundo funciona bem em mobile */
     .background-image {
         background-size: cover;
         background-position: center;
