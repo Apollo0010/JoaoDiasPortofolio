@@ -184,7 +184,6 @@ h1 a {
    ESTILOS RESPONSIVOS (ecrãs pequenos)
    ======================================== */
 
-/* Para ecrãs menores que 768px */
 @media (max-width: 768px) {
     /* Ajusta APENAS a altura da grelha para ocupar mais espaço */
     .grid-container {
@@ -210,16 +209,19 @@ h1 a {
         padding: 10px 0;                   /* Adiciona padding mínimo */
     }
     
-    /* Mantém o rodapé compacto mas funcional */
+    /* Mantém o rodapé compacto mas funcional - MENU VERTICAL com espaço */
     #bottom-content {
-        flex-direction: row;               /* MANTÉM horizontal */
-        gap: 20px;                         /* Reduz gap */
-        padding: 15px 0;                   /* Reduz padding vertical */
+        flex-direction: column;            /* MUDA para vertical no mobile */
+        gap: 25px;                         /* Mais espaço entre links */
+        padding: 20px 0 25px;              /* Mais padding */
+        margin-top: 30px;                  /* Espaço do conteúdo acima */
     }
     
-    /* Mantém a estrutura dos links do rodapé igual ao desktop */
+    /* Ajusta a estrutura dos links do rodapé para vertical */
     .footer-center {
-        gap: 25px;                         /* Reduz ligeiramente o gap */
+        flex-direction: column;            /* Links em coluna */
+        gap: 20px;                         /* Espaço entre links */
+        align-items: center;               /* Centraliza os links */
     }
     
     .footer-center p a {
