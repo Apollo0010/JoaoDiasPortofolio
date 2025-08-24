@@ -1,0 +1,125 @@
+/* ========================================
+   ESTILOS PARA A PÁGINA "VITALS" (INFORMAÇÕES PESSOAIS)
+   ======================================== */
+
+/* Configurações básicas - remove margens e define fonte */
+body, html {
+    margin: 0;          /* Remove margens do navegador */
+    padding: 0;         /* Remove espaçamento interno */
+    font-family: 'Arial', sans-serif;  /* Fonte Arial para toda a página */
+    height: 100%;       /* Altura total da janela */
+}
+
+/* Container principal da página */
+.main-page {
+    min-height: 100vh;  /* Pelo menos a altura total da janela */
+    display: flex;      /* Layout flexível */
+    flex-direction: column;  /* Organiza elementos em coluna vertical */
+}
+
+/* ========================================
+   CABEÇALHO DA PÁGINA
+   ======================================== */
+
+/* Área do cabeçalho */
+#top-content {
+    color: white;       /* Texto branco */
+    width: 100%;        /* Ocupa toda a largura */
+    padding: 20px 0;    /* 20px de espaço em cima e em baixo */
+}
+
+/* Título do cabeçalho */
+#top-content h1 {
+    font-size: 1em;     /* Tamanho normal da fonte */
+    margin: 0;          /* Remove margens */
+    color: inherit;     /* Herda a cor do pai (branco) */
+    mix-blend-mode: difference;  /* Cria contraste automático com fundo */
+    text-align: center; /* Centraliza o texto */
+}
+
+/* Links dentro do título */
+h1 a {
+    text-decoration: none;  /* Remove sublinhado */
+    color: black;           /* Cor preta para o link */
+}
+
+/* ========================================
+   CONTEÚDO PRINCIPAL (CENTRO DA PÁGINA)
+   ======================================== */
+
+/* Container do conteúdo principal */
+#grid-container {
+    flex: 1;                /* Ocupa todo o espaço disponível */
+    display: flex;          /* Layout flexível */
+    flex-direction: column; /* Organiza em coluna */
+    justify-content: center;    /* Centraliza verticalmente */
+    align-items: center;        /* Centraliza horizontalmente */
+    gap: 20px;                  /* 20px de espaço entre elementos */
+    padding: 20px;              /* 20px de espaço interno */
+}
+
+/* Parágrafos dentro do conteúdo principal */
+#grid-container p {
+    margin: 0;              /* Remove margens */
+    font-size: 1.1em;       /* Ligeiramente maior que o normal */
+    text-align: center;     /* Texto centralizado */
+}
+
+/* ========================================
+   RODAPÉ (SEMPRE NA PARTE INFERIOR)
+   ======================================== */
+
+/* Container do rodapé */
+#bottom-content {
+    display: flex;          /* Layout flexível */
+    align-items: center;    /* Alinha verticalmente ao centro */
+    justify-content: center;    /* Centraliza horizontalmente */
+    width: 100%;               /* Ocupa toda a largura */
+    padding: 20px 0;           /* 20px de espaço em cima e baixo */
+    box-sizing: border-box;    /* Inclui padding no cálculo da largura */
+    margin-top: auto;          /* Empurra o rodapé para baixo */
+}
+
+/* Secção central do rodapé (About e Contact) */
+.footer-center {
+    display: flex;          /* Layout flexível */
+    justify-content: center; /* Centraliza os links */
+    gap: 40px;              /* 40px de espaço entre os links */
+}
+
+/* Parágrafos na secção central do rodapé */
+.footer-center p {
+    margin: 0;              /* Remove margens */
+}
+
+/* Links na secção central do rodapé */
+.footer-center p a {
+    font-size: 1em;         /* Tamanho normal */
+    color: black;           /* Cor preta */
+    mix-blend-mode: difference;  /* Contraste automático com fundo */
+    text-decoration: none;       /* Remove sublinhado */
+}
+
+/* ========================================
+   ESTILOS RESPONSIVOS (ecrãs pequenos)
+   ======================================== */
+
+/* Para ecrãs menores que 768px (tablets e telemóveis) */
+@media (max-width: 768px) {
+    /* Reduz o espaçamento do conteúdo principal */
+    #grid-container {
+        padding: 20px;
+    }
+    
+    /* Organiza o rodapé em coluna */
+    #bottom-content {
+        flex-direction: column;  /* Muda para layout vertical */
+        gap: 20px;               /* 20px entre elementos */
+        text-align: center;      /* Centraliza o texto */
+    }
+    
+    /* Reduz o espaçamento entre links no rodapé */
+    .footer-center {
+        gap: 20px;
+    }
+}

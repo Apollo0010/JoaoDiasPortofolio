@@ -1,0 +1,88 @@
+/* ========================================
+   ESTILOS PARA A PÁGINA PRINCIPAL (HOMEPAGE)
+   ======================================== */
+
+/* Configurações básicas para toda a página */
+body, html {
+    margin: 0;          /* Remove as margens padrão do navegador */
+    padding: 0;         /* Remove o espaçamento interno padrão */
+    font-family: 'Arial', sans-serif;  /* Define a fonte como Arial */
+    height: 100%;       /* Faz com que a página ocupe toda a altura da janela */
+}
+
+/* Container principal da página */
+.main-page {
+    position: relative;     /* Permite posicionar elementos dentro dele */
+    height: 100vh;         /* Ocupa 100% da altura da janela do navegador */
+    width: 100%;           /* Ocupa toda a largura disponível */
+    overflow: hidden;      /* Esconde qualquer conteúdo que saia dos limites */
+    display: flex;         /* Usa layout flexível */
+    flex-direction: column;     /* Organiza os elementos em coluna (de cima para baixo) */
+    justify-content: space-between; /* Distribui o espaço entre o topo e fundo */
+    text-align: center;    /* Centraliza o texto */
+}
+
+/* Estilos para a imagem de fundo */
+.background-image {
+    position: absolute;    /* Posiciona a imagem de forma absoluta */
+    top: 0;               /* Cola no topo da página */
+    left: 0;              /* Cola na lateral esquerda */
+    width: 100%;          /* Ocupa toda a largura */
+    height: 100%;         /* Ocupa toda a altura */
+    background-size: cover;    /* Redimensiona a imagem para cobrir toda a área */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Não repete a imagem */
+    z-index: -1;          /* Coloca a imagem atrás de todos os outros elementos */
+}
+
+/* Estilos para o conteúdo do topo da página */
+#top-content {
+    color: white;         /* Define a cor do texto como branca */
+    width: 100%;          /* Ocupa toda a largura */
+}
+
+/* Estilos para o título principal (h1) */
+#top-content h1 {
+    font-size: 2em;       /* Define o tamanho da fonte (2 vezes maior que o normal) */
+    margin-bottom: 20px;  /* Adiciona espaço de 20px abaixo do título */
+    color: inherit;       /* Herda a cor do elemento pai (branco) */
+    mix-blend-mode: difference; /* Cria contraste com o fundo (opcional) */
+}
+
+/* Estilos para o conteúdo da parte inferior */
+#bottom-content{
+    display: flex;        /* Usa layout flexível */
+    justify-content: center; /* Centraliza horizontalmente os links */
+    gap: 20px;           /* Adiciona 20px de espaço entre os links */
+}
+
+/* Estilos para os parágrafos na parte inferior */
+#bottom-content p {
+    font-size: 1em;      /* Tamanho normal da fonte */
+    margin-bottom: 30px; /* Adiciona 30px de espaço abaixo */
+    color: inherit;      /* Herda a cor do elemento pai */
+    mix-blend-mode: difference; /* Cria contraste com o fundo (opcional) */
+}
+
+/* Estilos para todos os links (a) */
+a{
+    text-decoration: none; /* Remove o sublinhado padrão dos links */
+    color: whitesmoke;     /* Define a cor dos links como branco-fumo */
+}
+
+/* ========================================
+   ESTILOS RESPONSIVOS (para ecrãs pequenos)
+   ======================================== */
+   
+/* Quando o ecrã for menor que 768px (tablets e telemóveis) */
+@media (max-width: 768px) {
+    /* Reduz o tamanho do título principal */
+    .top-content h1 {
+        font-size: 2rem;
+    }
+    
+    /* Mantém o tamanho normal do texto nos parágrafos */
+    .bottom-content p {
+        font-size: 1rem;
+    }
+}

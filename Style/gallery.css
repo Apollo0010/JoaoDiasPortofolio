@@ -1,0 +1,200 @@
+/* ========================================
+   ESTILOS PARA A PÁGINA DE GALERIA
+   ======================================== */
+
+/* Configurações básicas da página */
+body, html {
+    margin: 0;              /* Remove margens do navegador */
+    padding: 0;             /* Remove espaçamento padrão */
+    font-family: 'Arial', sans-serif;   /* Fonte Arial */
+    height: 100%;           /* Altura total da janela */
+}
+
+/* ========================================
+   CONTAINER PRINCIPAL DA GALERIA
+   ======================================== */
+
+/* Container principal da página */
+.main-page {
+    position: relative;     /* Permite posicionamento absoluto dentro dele */
+    height: auto;           /* Altura automática para se ajustar ao conteúdo */
+    width: 100%;            /* Largura total */
+    overflow: hidden;       /* Esconde conteúdo que saia dos limites */
+    display: flex;          /* Layout flexível */
+    flex-direction: column; /* Organiza em coluna vertical */
+    justify-content: space-between;  /* Distribui espaço entre topo e fundo */
+    text-align: center;     /* Centraliza o texto */
+    overflow-x: auto;       /* Permite scroll horizontal se necessário */
+}
+
+/* ========================================
+   CABEÇALHO DA GALERIA
+   ======================================== */
+
+/* Área do cabeçalho */
+#top-content {
+    color: black;           /* Texto preto */
+    width: 100%;            /* Largura total */
+    display: flex;          /* Layout flexível */
+    justify-content: center; /* Centraliza o título */
+    align-items: center;    /* Alinha verticalmente */
+    position: relative;     /* Para posicionamento do botão "voltar" */
+}
+
+/* Título principal */
+#top-content h1 {
+    font-size: 1em;         /* Tamanho normal */
+    margin: 0;              /* Remove margens */
+    color: black;           /* Cor preta */
+    padding: 10px;          /* 10px de espaço interno */
+}
+
+/* Botão "voltar" no canto superior direito */
+.back-button {
+    color: black;           /* Cor preta */
+    position: absolute;     /* Posicionamento absoluto */
+    right: 20px;            /* 20px da borda direita */
+    top: 0;                 /* Alinhado ao topo */
+}
+
+/* ========================================
+   ÁREA DA GALERIA DE IMAGENS
+   ======================================== */
+
+/* Container da visão geral do projecto */
+#project_overview {
+    scroll-behavior: smooth; /* Scroll suave */
+    padding: 10px;          /* 10px de espaço interno */
+}
+
+/* Grelha de imagens */
+.grid {
+    display: grid;          /* Layout em grelha */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    /* Colunas que se ajustam automaticamente, mínimo 250px cada */
+    gap: 20px;              /* 20px de espaço entre imagens */
+    list-style: none;       /* Remove marcadores de lista */
+    padding: 0;             /* Sem padding */
+    margin: 0 auto;         /* Centraliza a grelha */
+    max-width: 1200px;      /* Largura máxima de 1200px */
+}
+
+/* Imagens individuais na grelha */
+.image img {
+    width: 100%;            /* Ocupa toda a largura disponível */
+    height: auto;           /* Altura automática (mantém proporções) */
+    display: block;         /* Comportamento de bloco */
+    object-fit: cover;      /* Cobre toda a área sem distorcer */
+    border-radius: 0px;     /* Cantos sem arredondamento */
+}
+
+/* ========================================
+   RODAPÉ DA GALERIA
+   ======================================== */
+
+/* Container do rodapé */
+#bottom-content {
+    display: flex;          /* Layout flexível */
+    justify-content: center; /* Centraliza horizontalmente */
+    gap: 20px;              /* 20px entre elementos */
+}
+
+/* Parágrafos no rodapé */
+#bottom-content p {
+    font-size: 1em;         /* Tamanho normal */
+    margin-bottom: 30px;    /* 30px de espaço abaixo */
+    color: inherit;         /* Herda a cor do pai */
+    mix-blend-mode: difference;  /* Contraste automático */
+}
+
+/* Todos os links */
+a {
+    text-decoration: none;  /* Remove sublinhado */
+    color: black;           /* Cor preta */
+}
+
+/* ========================================
+   LIGHTBOX (JANELA POP-UP PARA VER IMAGENS GRANDES)
+   ======================================== */
+
+/* Container principal do lightbox */
+.lightbox {
+    display: none;          /* Escondido inicialmente */
+    position: fixed;        /* Posição fixa na janela */
+    z-index: 1000;          /* Aparece por cima de tudo */
+    padding-top: 50px;      /* 50px de espaço no topo */
+    left: 0;                /* Alinhado à esquerda */
+    top: 0;                 /* Alinhado ao topo */
+    width: 100%;            /* Largura total da janela */
+    height: 100%;           /* Altura total da janela */
+    overflow: hidden;       /* Esconde scroll */
+    background-color: rgba(0,0,0,0.9);  /* Fundo preto semi-transparente */
+    text-align: center;     /* Centraliza conteúdo */
+}
+
+/* Imagem dentro do lightbox */
+.lightbox img {
+    max-width: 90%;         /* Máximo 90% da largura */
+    max-height: 80vh;       /* Máximo 80% da altura da janela */
+    margin: auto;           /* Centraliza automaticamente */
+    display: block;         /* Comportamento de bloco */
+    object-fit: contain;    /* Mantém proporções */
+}
+
+/* Botão "fechar" do lightbox */
+.popup-back-button {
+    position: absolute;     /* Posicionamento absoluto */
+    top: 20px;              /* 20px do topo */
+    right: 20px;            /* 20px da direita */
+    color: white;           /* Cor branca */
+    font-size: 18px;        /* Tamanho da fonte */
+    cursor: pointer;        /* Cursor de clique */
+    z-index: 1001;          /* Aparece por cima da imagem */
+    font-weight: bold;      /* Texto em negrito */
+}
+
+/* Botões de navegação (anterior/seguinte) */
+.prev, .next {
+    cursor: pointer;        /* Cursor de clique */
+    position: absolute;     /* Posicionamento absoluto */
+    top: 50%;               /* No meio da altura */
+    padding: 16px;          /* 16px de espaço interno */
+    color: white;           /* Cor branca */
+    font-weight: bold;      /* Texto em negrito */
+    font-size: 36px;        /* Fonte grande */
+    user-select: none;      /* Impede selecção do texto */
+    transform: translateY(-50%);  /* Centraliza verticalmente */
+    z-index: 1001;          /* Aparece por cima da imagem */
+}
+
+/* Botão "anterior" (lado esquerdo) */
+.prev {
+    left: 10px;             /* 10px da borda esquerda */
+}
+
+/* Botão "seguinte" (lado direito) */
+.next {
+    right: 10px;            /* 10px da borda direita */
+}
+
+/* Efeitos hover nos botões do lightbox */
+.prev:hover, .next:hover, .popup-back-button:hover {
+    color: #ccc;            /* Cor cinza claro quando se passa o rato */
+}
+
+/* ========================================
+   ESTILOS RESPONSIVOS (ecrãs pequenos)
+   ======================================== */
+
+/* Para ecrãs menores que 768px */
+@media (max-width: 768px) {
+    /* Reduz tamanho do título */
+    #top-content h1 {
+        font-size: 2rem;
+    }
+    
+    /* Mantém tamanho normal do texto no rodapé */
+    #bottom-content p {
+        font-size: 1rem;
+    }
+}

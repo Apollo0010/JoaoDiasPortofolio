@@ -1,0 +1,199 @@
+/* ========================================
+   ESTILOS PARA A PÁGINA DE TRABALHOS (WORK)
+   ======================================== */
+
+/* Configurações básicas da página */
+body, html {
+    margin: 0;              /* Remove margens do navegador */
+    padding: 0;             /* Remove espaçamento padrão */
+    font-family: 'Arial', sans-serif;   /* Define fonte Arial */
+    height: 100%;           /* Altura total da janela */
+}
+
+/* ========================================
+   LAYOUT PRINCIPAL EM GRELHA (2 COLUNAS)
+   ======================================== */
+
+/* Container da grelha principal */
+.grid-container {
+    display: grid;                      /* Usa layout de grelha */
+    grid-template-columns: 1fr 1fr;     /* Duas colunas de tamanho igual */
+    height: calc(100vh - 100px);        /* Altura total menos 100px (para cabeçalho/rodapé) */
+}
+
+/* ========================================
+   COLUNA ESQUERDA - INFORMAÇÕES DOS TRABALHOS
+   ======================================== */
+
+/* Área das informações dos trabalhos */
+.work-information {
+    padding: 30px;          /* 30px de espaço interno */
+}
+
+/* Links normais dentro das informações */
+.work-information a{
+    color: black;           /* Cor preta */
+    text-decoration: none;  /* Remove sublinhado */
+}
+
+/* Efeito quando se passa o rato por cima dos links */
+.work-information a:hover{
+    color: blue;            /* Muda para azul */
+    -webkit-background-clip: text;  /* Efeito especial de texto */
+}
+
+/* ========================================
+   COLUNA DIREITA - EXIBIÇÃO DE IMAGENS
+   ======================================== */
+
+/* Área de exibição das imagens */
+.image-display {
+    padding: 20px;          /* 20px de espaço interno */
+    overflow-y: auto;       /* Permite scroll vertical se necessário */
+    height: 70vh;           /* 70% da altura da janela */
+}
+
+/* Imagens na área de exibição */
+.image-display img {
+    max-width: 100%;        /* Não ultrapassa a largura do container */
+    max-height: 100%;       /* Não ultrapassa a altura do container */
+    object-fit: contain;    /* Mantém proporções sem distorcer */
+}
+
+/* ========================================
+   CABEÇALHO DA PÁGINA
+   ======================================== */
+
+/* Área do cabeçalho */
+#top-content {
+    color: white;           /* Texto branco */
+    width: 100%;            /* Largura total */
+}
+
+/* Título principal no cabeçalho */
+#top-content h1 {
+    font-size: 1em;         /* Tamanho normal */
+    margin-bottom: 20px;    /* 20px de espaço abaixo */
+    color: inherit;         /* Herda cor do pai */
+    mix-blend-mode: difference;  /* Contraste automático */
+    text-align: center;     /* Centralizado */
+}
+
+/* Links no título */
+h1 a {
+    text-decoration: none;  /* Remove sublinhado */
+    color: black;           /* Cor preta */
+}
+
+/* ========================================
+   RODAPÉ COM 3 SECÇÕES
+   ======================================== */
+
+/* ========================================
+   RODAPÉ (SEMPRE NA PARTE INFERIOR)
+   ======================================== */
+
+/* Container do rodapé */
+#bottom-content {
+    display: flex;          /* Layout flexível */
+    align-items: center;    /* Alinha verticalmente ao centro */
+    justify-content: center;    /* Centraliza horizontalmente */
+    width: 100%;               /* Ocupa toda a largura */
+    padding: 20px 0;           /* 20px de espaço em cima e baixo */
+    box-sizing: border-box;    /* Inclui padding no cálculo da largura */
+    margin-top: auto;          /* Empurra o rodapé para baixo */
+}
+
+/* Secção central do rodapé (About e Contact) */
+.footer-center {
+    display: flex;          /* Layout flexível */
+    justify-content: center; /* Centraliza os links */
+    gap: 40px;              /* 40px de espaço entre os links */
+}
+
+/* Parágrafos na secção central do rodapé */
+.footer-center p {
+    margin: 0;              /* Remove margens */
+}
+
+/* Links na secção central do rodapé */
+.footer-center p a {
+    font-size: 1em;         /* Tamanho normal */
+    color: black;           /* Cor preta */
+    mix-blend-mode: difference;  /* Contraste automático com fundo */
+    text-decoration: none;       /* Remove sublinhado */
+}
+
+/* ========================================
+   ORGANIZAÇÃO DOS TRABALHOS EM COLUNAS
+   ======================================== */
+
+/* Linha de trabalho individual */
+.work-row {
+    display: flex;          /* Layout flexível */
+    margin-bottom: 8px;     /* 8px entre linhas */
+    align-items: center;    /* Alinha verticalmente */
+    cursor: pointer;        /* Cursor de clique */
+}
+
+/* Nome do trabalho */
+.work-name {
+    flex: 2;                /* Ocupa 2 partes */
+    text-align: left;       /* Alinhado à esquerda */
+    padding-right: 20px;    /* 20px à direita */
+}
+
+/* Ano do trabalho */
+.work-year {
+    flex: 1;                /* Ocupa 1 parte */
+    text-align: left;       /* Alinhado à esquerda */
+    padding-right: 20px;    /* 20px à direita */
+}
+
+/* Tipo do trabalho */
+.work-type {
+    flex: 1;                /* Ocupa 1 parte */
+    text-align: left;       /* Alinhado à esquerda */
+}
+
+/* Links dentro das linhas de trabalho */
+.work-row a {
+    color: black;           /* Cor preta */
+    text-decoration: none;  /* Sem sublinhado */
+    display: block;         /* Ocupa toda a área clicável */
+    width: 100%;            /* Largura total */
+}
+
+/* Efeitos quando se passa o rato por cima */
+.work-row:hover a {
+    color: blue;            /* Muda para azul */
+}
+
+.work-row:hover {
+    color: blue;            /* Texto azul */
+    text-decoration: underline;  /* Adiciona sublinhado */
+}
+
+/* ========================================
+   ESTILOS RESPONSIVOS (ecrãs pequenos)
+   ======================================== */
+
+/* Para ecrãs menores que 768px */
+@media (max-width: 768px) {
+    /* Muda para uma só coluna */
+    .grid-container {
+        grid-template-columns: 1fr;  /* Uma coluna só */
+    }
+    
+    /* Reorganiza o rodapé verticalmente */
+    #bottom-content {
+        flex-direction: column;  /* Layout vertical */
+        gap: 20px;               /* 20px entre elementos */
+        text-align: center;      /* Texto centralizado */
+    }
+    
+    /* Reduz espaço entre links centrais */
+    .footer-center {
+        gap: 20px;
+    }
+}
