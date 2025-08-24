@@ -90,12 +90,13 @@ a{
         padding: 0 15px;       /* Só adiciona padding lateral */
     }
 
-    /* Ajusta o conteúdo inferior - MENU VERTICAL com mais espaço do título */
+    /* Ajusta o conteúdo inferior - MANTÉM HORIZONTAL com mais espaço do título */
     #bottom-content {
-        flex-direction: column; /* MUDA para vertical no mobile */
-        gap: 25px;              /* Mais espaço entre links */
+        flex-direction: row;    /* MANTÉM horizontal como desktop */
+        gap: 20px;              /* Espaço entre links */
         padding: 0 15px 30px;   /* Mais padding inferior */
         margin-top: 40px;       /* Adiciona espaço do título */
+        justify-content: center; /* Centraliza os links */
     }
 
     #bottom-content p {

@@ -209,19 +209,20 @@ h1 a {
         padding: 10px 0;                   /* Adiciona padding mínimo */
     }
     
-    /* Mantém o rodapé compacto mas funcional - MENU VERTICAL com espaço */
+    /* Mantém o rodapé horizontal como desktop mas com mais espaço */
     #bottom-content {
-        flex-direction: column;            /* MUDA para vertical no mobile */
-        gap: 25px;                         /* Mais espaço entre links */
+        flex-direction: row;               /* MANTÉM horizontal */
+        gap: 20px;                         /* Espaço entre links */
         padding: 20px 0 25px;              /* Mais padding */
         margin-top: 30px;                  /* Espaço do conteúdo acima */
+        justify-content: center;           /* Centraliza os links */
     }
     
-    /* Ajusta a estrutura dos links do rodapé para vertical */
+    /* Mantém os links do rodapé horizontal */
     .footer-center {
-        flex-direction: column;            /* Links em coluna */
-        gap: 20px;                         /* Espaço entre links */
-        align-items: center;               /* Centraliza os links */
+        flex-direction: row;               /* MANTÉM horizontal */
+        gap: 25px;                         /* Espaço entre links */
+        align-items: center;               /* Centraliza verticalmente */
     }
     
     .footer-center p a {
