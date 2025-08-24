@@ -63,6 +63,14 @@ document.addEventListener('DOMContentLoaded', function() {
         'Images/homepage/45.jpg',
         'Images/homepage/46.jpg'   // Última imagem (total: 46 imagens)
     ];
+
+          // Pré-carregar todas as imagens
+      const preloaded = [];
+      images.forEach((src) => {
+         const img = new Image();
+         img.src = src;
+         preloaded.push(img);
+      });
     
     /* ========================================
        CONFIGURAÇÃO INICIAL
