@@ -15,6 +15,8 @@ let currentIndex = 0;
 // Guarda a lista de todas as imagens da galeria
 let images = [];
 
+
+
 /* ========================================
    FUNÇÃO PARA ABRIR O LIGHTBOX (POP-UP)
    ======================================== */
@@ -35,6 +37,14 @@ function openLightbox(index) {
     // Torna o lightbox visível (muda display de 'none' para 'block')
     document.getElementById('lightbox').style.display = 'block';
 }
+
+   // Pré-carregar todas as imagens
+   const preloaded = [];
+   images.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+      preloaded.push(img);
+   });
 
 /* ========================================
    FUNÇÃO PARA FECHAR O LIGHTBOX

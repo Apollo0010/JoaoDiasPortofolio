@@ -33,30 +33,37 @@ infoLinks.forEach(link => {
     // Adiciona um "ouvinte" que detecta quando o rato passa por cima do link
     link.addEventListener('mouseover', function() {
         
-        // Obtém a lista de imagens do atributo 'data-images' do link
-        // Por exemplo: se o HTML for <a data-images="img1.jpg,img2.jpg,img3.jpg">
-        // O split(',') divide a string em: ['img1.jpg', 'img2.jpg', 'img3.jpg']
-        const images = this.getAttribute('data-images').split(',');
-        
-        // Limpa todas as imagens que possam estar a ser mostradas
-        imageDisplay.innerHTML = '';
-        
-        // Verifica se existem realmente imagens para mostrar
-        // Se a primeira entrada não estiver vazia ("")
-        if(images[0] !== "") {
-            
-            // Para cada imagem na lista
-            images.forEach(image => {
-                // Cria um novo elemento <img> em HTML
-                const imgElement = document.createElement('img');
-                
-                // Define o caminho da imagem (src = source/origem)
-                imgElement.src = image;
-                
-                // Adiciona a imagem ao container de exibição
-                imageDisplay.appendChild(imgElement);
-            });
-        }
+      // Obtém a lista de imagens do atributo 'data-images' do link
+      // Por exemplo: se o HTML for <a data-images="img1.jpg,img2.jpg,img3.jpg">
+      // O split(',') divide a string em: ['img1.jpg', 'img2.jpg', 'img3.jpg']
+      const images = this.getAttribute('data-images').split(',');
+
+      // Pré-carregar todas as imagens
+      const preloaded = [];
+      images.forEach((src) => {
+         if(src && src.trim() !== "") {
+            const img = new Image();
+            img.src = src;
+            preloaded.push(img);
+         }
+      });
+
+      // Limpa todas as imagens que possam estar a ser mostradas
+      imageDisplay.innerHTML = '';
+
+      // Verifica se existem realmente imagens para mostrar
+      // Se a primeira entrada não estiver vazia ("")
+      if(images[0] !== "") {
+         // Para cada imagem na lista
+         images.forEach(image => {
+            // Cria um novo elemento <img> em HTML
+            const imgElement = document.createElement('img');
+            // Define o caminho da imagem (src = source/origem)
+            imgElement.src = image;
+            // Adiciona a imagem ao container de exibição
+            imageDisplay.appendChild(imgElement);
+         });
+      }
     });
 
     /* ========================================
