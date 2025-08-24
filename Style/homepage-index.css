@@ -76,13 +76,35 @@ a{
    
 /* Quando o ecrã for menor que 768px (tablets e telemóveis) */
 @media (max-width: 768px) {
-    /* Reduz o tamanho do título principal */
-    .top-content h1 {
-        font-size: 2rem;
+    /* Ajusta o título principal para telas pequenas */
+    #top-content h1 {
+        font-size: 1.8rem; /* um pouco menor que o desktop */
+        margin-bottom: 15px;
+        padding: 0 10px;   /* evita que o texto fique colado nas bordas */
     }
-    
-    /* Mantém o tamanho normal do texto nos parágrafos */
-    .bottom-content p {
-        font-size: 1rem;
+
+    /* Ajusta o conteúdo inferior (links e parágrafos) */
+    #bottom-content {
+        flex-direction: column;  /* coloca os links/elementos em coluna */
+        gap: 15px;               /* reduz o espaçamento entre eles */
+        padding: 0 10px;         /* evita que o conteúdo toque as bordas */
+    }
+
+    #bottom-content p {
+        font-size: 0.95rem;      /* ajusta um pouco menor que desktop */
+        margin-bottom: 20px;
+    }
+
+    /* Centraliza todo o texto e conteúdo */
+    .main-page {
+        text-align: center;
+        justify-content: flex-start; /* o conteúdo começa do topo */
+        padding-top: 20px;           /* dá um pequeno espaçamento do topo */
+    }
+
+    /* Garante que a imagem de fundo cubra corretamente em telas pequenas */
+    .background-image {
+        background-size: cover;
+        background-position: center;
     }
 }
