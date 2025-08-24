@@ -104,22 +104,47 @@ h1 a {
    ESTILOS RESPONSIVOS (ecrãs pequenos)
    ======================================== */
 
-/* Para ecrãs menores que 768px (tablets e telemóveis) */
 @media (max-width: 768px) {
-    /* Reduz o espaçamento do conteúdo principal */
+    /* Cabeçalho */
+    #top-content {
+        padding: 15px 10px;      /* Reduz padding vertical e adiciona padding lateral */
+    }
+
+    #top-content h1 {
+        font-size: 1.2em;        /* Aumenta um pouco a legibilidade no mobile */
+        padding: 0 5px;          /* Evita que o texto encoste nas bordas */
+        text-align: center;
+    }
+
+    #top-content h1 a {
+        font-size: 1em;          /* Ajusta tamanho do link */
+    }
+
+    /* Conteúdo principal */
     #grid-container {
-        padding: 20px;
+        padding: 15px;            /* Padding reduzido para mobile */
+        gap: 15px;                /* Espaçamento menor entre elementos */
     }
-    
-    /* Organiza o rodapé em coluna */
+
+    #grid-container p {
+        font-size: 1em;           /* Ajusta o texto para leitura confortável */
+        text-align: center;
+    }
+
+    /* Rodapé */
     #bottom-content {
-        flex-direction: column;  /* Muda para layout vertical */
-        gap: 20px;               /* 20px entre elementos */
-        text-align: center;      /* Centraliza o texto */
+        flex-direction: column;   /* Coluna vertical */
+        gap: 15px;                /* Espaçamento menor entre itens */
+        padding: 15px 10px;       /* Padding reduzido */
+        text-align: center;
     }
-    
-    /* Reduz o espaçamento entre links no rodapé */
+
     .footer-center {
-        gap: 20px;
+        flex-direction: column;   /* Links empilhados verticalmente */
+        gap: 15px;                /* Espaçamento menor entre links */
+    }
+
+    .footer-center p a {
+        font-size: 0.95em;        /* Tamanho de fonte levemente menor */
     }
 }
