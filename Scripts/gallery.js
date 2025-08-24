@@ -5,22 +5,27 @@
 let currentIndex = 0;
 let images = [];
 
-// Pré-carregar todas as imagens da galeria
+// Quando a página termina de carregar
 document.addEventListener('DOMContentLoaded', () => {
+
+    // Seleciona todas as imagens da galeria
     images = Array.from(document.querySelectorAll('.image img'));
-    
-    // Pré-carregar
+
+    // Pré-carrega todas as imagens
     images.forEach(img => {
         const preImg = new Image();
         preImg.src = img.src;
     });
 
-    // Adiciona clique para abrir lightbox
+    // Adiciona clique para abrir o lightbox
     images.forEach((img, index) => {
         img.addEventListener('click', () => openLightbox(index));
     });
 });
 
+/* ========================================
+   FUNÇÃO PARA ABRIR O LIGHTBOX
+   ======================================== */
 function openLightbox(index) {
     currentIndex = index;
     const lightboxImg = document.getElementById('lightbox-img');
@@ -28,18 +33,28 @@ function openLightbox(index) {
     document.getElementById('lightbox').style.display = 'block';
 }
 
+/* ========================================
+   FUNÇÃO PARA FECHAR O LIGHTBOX
+   ======================================== */
 function closeLightbox() {
     document.getElementById('lightbox').style.display = 'none';
 }
 
+/* ========================================
+   FUNÇÃO PARA NAVEGAR ENTRE IMAGENS
+   ======================================== */
 function changeImage(direction) {
     currentIndex += direction;
+
     if (currentIndex < 0) currentIndex = images.length - 1;
     if (currentIndex >= images.length) currentIndex = 0;
+
     document.getElementById('lightbox-img').src = images[currentIndex].src;
 }
 
-// Navegação por teclado
+/* ========================================
+   NAVEGAÇÃO POR TECLADO
+   ======================================== */
 document.addEventListener('keydown', event => {
     const lightbox = document.getElementById('lightbox');
     if (lightbox.style.display === 'block') {
