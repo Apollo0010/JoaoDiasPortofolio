@@ -184,7 +184,7 @@ h1 a {
    ESTILOS RESPONSIVOS (ecrãs pequenos)
    ======================================== */
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     /* Ajusta APENAS a altura da grelha para ocupar mais espaço */
     .grid-container {
         grid-template-columns: 1fr;        /* Mantém uma coluna */
