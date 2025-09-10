@@ -75,7 +75,7 @@ a{
    ======================================== */
    
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     /* Mantém a estrutura principal igual ao desktop */
     .main-page {
         justify-content: space-between; /* MANTÉM a distribuição igual ao desktop */

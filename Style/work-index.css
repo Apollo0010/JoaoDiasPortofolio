@@ -179,62 +179,89 @@ h1 a {
 
 
 
+/* -------------------------
+   mobile-thumb default: escondida no desktop
+   ------------------------- */
+.work-row > img.mobile-thumb {
+    display: none;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
 
 /* ========================================
-   ESTILOS RESPONSIVOS (ecrãs pequenos)
-   ======================================== */
+ESTILOS RESPONSIVOS (ecrãs pequenos)
+======================================== */
 
-@media (max-width: 600px) {
-    /* Ajusta APENAS a altura da grelha para ocupar mais espaço */
+@media (max-width: 768px) {
+    /* Grelha passa a 1 coluna e altura automática no mobile */
     .grid-container {
-        grid-template-columns: 1fr;        /* Mantém uma coluna */
-        height: calc(100vh - 80px);        /* REDUZ o espaço reservado (era 100px, agora 80px) */
-        gap: 0;                            /* Remove gap entre elementos */
+        grid-template-columns: 1fr;
+        height: auto;
+        gap: 0;
     }
-    
-    /* Reduz padding da área de trabalhos para aproveitar mais espaço */
-    .work-information {
-        padding: 20px 15px;                /* Reduz padding (era 30px) */
-    }
-    
-    /* Ajusta a área de imagens */
+
+    /* Esconde o painel lateral de imagens (desktop-only) */
     .image-display {
-        padding: 15px;                     /* Reduz padding (era 20px) */
-        height: 60vh;                      /* AUMENTA a altura (era não definida) */
+        display: none !important;
     }
-    
-    /* Ajusta o cabeçalho para ocupar menos espaço */
-    #top-content h1 {
-        margin-bottom: 15px;               /* Reduz margem (era 20px) */
-        padding: 10px 0;                   /* Adiciona padding mínimo */
-    }
-    
-    /* Mantém o rodapé horizontal como desktop mas com mais espaço */
-    #bottom-content {
-        flex-direction: row;               /* MANTÉM horizontal */
-        gap: 20px;                         /* Espaço entre links */
-        padding: 20px 0 25px;              /* Mais padding */
-        margin-top: 30px;                  /* Espaço do conteúdo acima */
-        justify-content: center;           /* Centraliza os links */
-    }
-    
-    /* Mantém os links do rodapé horizontal */
-    .footer-center {
-        flex-direction: row;               /* MANTÉM horizontal */
-        gap: 25px;                         /* Espaço entre links */
-        align-items: center;               /* Centraliza verticalmente */
-    }
-    
-    .footer-center p a {
-        font-size: 0.9em;                 /* Ligeiramente menor */
-    }
-    
-    /* Otimiza as linhas de trabalho para mobile */
+
+    /* Cada trabalho vira um bloco (feed) */
     .work-row {
-        margin-bottom: 6px;                /* Reduz espaço entre linhas */
+        display: block;
+        margin-bottom: 25px;
+        padding: 0 16px;
     }
-    
-    .work-name, .work-year, .work-type {
-        padding-right: 15px;               /* Reduz padding lateral */
+
+    /* MOSTRAR a thumbnail adicionada no HTML */
+    .work-row > img.mobile-thumb {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-height: 60vh;      /* controla altura em ecrãs maiores */
+        object-fit: cover;
+        margin-bottom: 12px;
+        border-radius: 4px;
+    }
+
+    /* Texto embaixo da imagem */
+    .work-name {
+        display: block;
+        font-weight: 700;
+        margin-bottom: 6px;
+        font-size: 1.05em;
+    }
+
+    .work-year, .work-type {
+        display: block;
+        color: #666;
+        font-size: 0.95em;
+        margin-bottom: 4px;
+    }
+
+    /* garante links fáceis de tocar */
+    .work-row a {
+        display: inline; /* mantém estrutura do desktop, mas textos estão empilhados */
+    }
+
+   
+
+  
+}
+
+/* Ajuste fino para iPhone XR (largura 375px) — opcional */
+@media (max-width: 380px) {
+    .work-row {
+        padding: 0 12px;
+    }
+    .work-row > img.mobile-thumb {
+        max-height: 50vh;
+    }
+    .work-name {
+        font-size: 1.02em;
     }
 }
+
+
+
+

@@ -187,7 +187,7 @@ a {
    ======================================== */
 
 /* Para ecrãs menores que 768px */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     /* Reduz tamanho do título */
     #top-content h1 {
         font-size: 2rem;
