@@ -139,6 +139,7 @@ a {
     margin: auto;           /* Centraliza automaticamente */
     display: block;         /* Comportamento de bloco */
     object-fit: contain;    /* Mantém proporções */
+    
 }
 
 /* Botão "fechar" do lightbox */
@@ -192,7 +193,25 @@ a {
     #top-content h1 {
         font-size: 2rem;
     }
-    
+
+   /* Lightbox centrado para mobile - funciona para fotos verticais e horizontais */
+    .lightbox {
+        display: flex !important;      /* Força flexbox quando ativo */
+        justify-content: center;       /* Centraliza horizontalmente */
+        align-items: center;           /* Centraliza verticalmente */
+        padding: 0;                    /* Remove padding-top original */
+        box-sizing: border-box;        /* Inclui padding no tamanho total */
+    }
+
+    .lightbox img {
+        max-width: 95vw;               /* 95% da largura da viewport */
+        max-height: 95vh;              /* 95% da altura da viewport */
+        width: auto;                   /* Largura automática */
+        height: auto;                  /* Altura automática */
+        object-fit: contain;           /* Mantém proporções sempre */
+        margin: 0;                     /* Remove margin auto */
+        display: block;                /* Mantém como block */
+    }
     /* Mantém tamanho normal do texto no rodapé */
     #bottom-content p {
         font-size: 1rem;
