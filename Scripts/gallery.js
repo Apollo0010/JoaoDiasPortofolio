@@ -28,51 +28,10 @@ document.addEventListener('DOMContentLoaded', () => {
         preImg.src = img.src;
     });
 
-    // Flag para evitar clique após swipe
-    let justSwiped = false;
-
     // Adiciona clique para abrir o lightbox
     images.forEach((img, index) => {
-        img.addEventListener('click', () => {
-            if (justSwiped) {
-                justSwiped = false;
-                return;
-            }
-            openLightbox(index);
-        });
+        img.addEventListener('click', () => openLightbox(index));
     });
-
-    // Adiciona suporte a swipe no lightbox para mobile
-    const lightbox = document.getElementById('lightbox');
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    if (lightbox) {
-        lightbox.addEventListener('touchstart', function(e) {
-            if (e.touches.length === 1) {
-                touchStartX = e.touches[0].clientX;
-            }
-        });
-        lightbox.addEventListener('touchmove', function(e) {
-            if (e.touches.length === 1) {
-                touchEndX = e.touches[0].clientX;
-            }
-        });
-        lightbox.addEventListener('touchend', function(e) {
-            const deltaX = touchEndX - touchStartX;
-            if (Math.abs(deltaX) > 50) { // Sensibilidade do swipe
-                justSwiped = true;
-                if (deltaX < 0) {
-                    changeImage(1); // Swipe para a esquerda, próxima imagem
-                } else {
-                    changeImage(-1); // Swipe para a direita, imagem anterior
-                }
-            }
-            // Reseta valores
-            touchStartX = 0;
-            touchEndX = 0;
-        });
-    }
 });
 
 /* ========================================
