@@ -1,3 +1,26 @@
+@media (max-width: 768px) {
+    .lightbox {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        left: 0;
+        top: 0;
+        background: rgba(0,0,0,0.9);
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    .lightbox img {
+        display: block;
+        margin: 0 auto;
+        max-width: 90vw;
+        max-height: 80vh;
+        object-fit: contain;
+    }
+}
 /* ========================================
    ESTILOS PARA A PÁGINA DE GALERIA
    ======================================== */
@@ -144,14 +167,14 @@ a {
 
 /* Botão "fechar" do lightbox */
 .popup-back-button {
-    position: absolute;     /* Posicionamento absoluto */
-    top: 20px;              /* 20px do topo */
-    right: 20px;            /* 20px da direita */
-    color: white;           /* Cor branca */
-    font-size: 18px;        /* Tamanho da fonte */
-    cursor: pointer;        /* Cursor de clique */
-    z-index: 1001;          /* Aparece por cima da imagem */
-    font-weight: bold;      /* Texto em negrito */
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 1101;
+    font-weight: bold;
 }
 
 /* Botões de navegação (anterior/seguinte) */
