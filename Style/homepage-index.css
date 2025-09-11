@@ -13,7 +13,8 @@ body, html {
 /* Container principal da página */
 .main-page {
     position: relative;     /* Permite posicionar elementos dentro dele */
-    height: 100vh;         /* Ocupa 100% da altura da janela do navegador */
+    height: 100vh;          /*Para browsers antigos*/
+    height: 100dvh;          /* Ocupa 100% da altura da janela do navegador IOS SAFARI MODERNO */
     width: 100%;           /* Ocupa toda a largura disponível */
     overflow: hidden;      /* Esconde qualquer conteúdo que saia dos limites */
     display: flex;         /* Usa layout flexível */
