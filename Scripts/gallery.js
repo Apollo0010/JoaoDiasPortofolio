@@ -28,9 +28,18 @@ document.addEventListener('DOMContentLoaded', () => {
         preImg.src = img.src;
     });
 
+    // Flag para evitar clique após swipe
+    let justSwiped = false;
+
     // Adiciona clique para abrir o lightbox
     images.forEach((img, index) => {
-        img.addEventListener('click', () => openLightbox(index));
+        img.addEventListener('click', () => {
+            if (justSwiped) {
+                justSwiped = false;
+                return;
+            }
+            openLightbox(index);
+        });
     });
 
     // Adiciona suporte a swipe no lightbox para mobile
@@ -52,6 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
         lightbox.addEventListener('touchend', function(e) {
             const deltaX = touchEndX - touchStartX;
             if (Math.abs(deltaX) > 50) { // Sensibilidade do swipe
+                justSwiped = true;
                 if (deltaX < 0) {
                     changeImage(1); // Swipe para a esquerda, próxima imagem
                 } else {
