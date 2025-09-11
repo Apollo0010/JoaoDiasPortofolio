@@ -188,34 +188,33 @@ a {
    ======================================== */
 
 /* Para ecrãs menores que 768px */
-@media (max-width: 768px) {
-    /* Reduz tamanho do título */
+@media (max-width: 768px){
     #top-content h1 {
         font-size: 2rem;
     }
 
-   /* Lightbox centrado para mobile - funciona para fotos verticais e horizontais */
     .lightbox {
-        display: flex !important;      /* Força flexbox quando ativo */
-        justify-content: center;       /* Centraliza horizontalmente */
-        align-items: center;           /* Centraliza verticalmente */
-        padding: 0;                    /* Remove padding-top original */
-        box-sizing: border-box;        /* Inclui padding no tamanho total */
+        display:flex !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        background: rgba(0,0,0,0.9);
+        text-align: center;
+    }
+    .lightbox img {
+        margin: 0 auto;
+        display: block;
+        max-width: 90vw;
+        max-height: 80vh;
+        object-fit: contain;
     }
 
-    .lightbox img {
-        max-width: 95vw;               /* 95% da largura da viewport */
-        max-height: 95vh;              /* 95% da altura da viewport */
-        width: auto;                   /* Largura automática */
-        height: auto;                  /* Altura automática */
-        object-fit: contain;           /* Mantém proporções sempre */
-        margin: 0;                     /* Remove margin auto */
-        display: block;                /* Mantém como block */
-    }
-    /* Mantém tamanho normal do texto no rodapé */
     #bottom-content p {
         font-size: 1rem;
     }
-
-   
 }
