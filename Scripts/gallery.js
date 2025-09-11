@@ -5,8 +5,19 @@
 let currentIndex = 0;
 let images = [];
 
+// Função para pré-carregar todas as imagens da galeria
+function preloadGalleryImages() {
+    const imgs = document.querySelectorAll('.image img');
+    imgs.forEach(img => {
+        const preImg = new Image();
+        preImg.src = img.src;
+    });
+}
+
 // Quando a página termina de carregar
 document.addEventListener('DOMContentLoaded', () => {
+    // Pré-carrega todas as imagens da galeria
+    preloadGalleryImages();
 
     // Seleciona todas as imagens da galeria
     images = Array.from(document.querySelectorAll('.image img'));
