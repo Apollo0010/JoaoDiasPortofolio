@@ -1,26 +1,3 @@
-@media (max-width: 768px) {
-    .lightbox {
-        display: flex !important;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        width: 100vw;
-        position: fixed;
-        left: 0;
-        top: 0;
-        background: rgba(0,0,0,0.9);
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-    }
-    .lightbox img {
-        display: block;
-        margin: 0 auto;
-        max-width: 90vw;
-        max-height: 80vh;
-        object-fit: contain;
-    }
-}
 /* ========================================
    ESTILOS PARA A PÁGINA DE GALERIA
    ======================================== */
@@ -212,30 +189,72 @@ a {
 
 /* Para ecrãs menores que 768px */
 @media (max-width: 768px){
+
+    
     #top-content h1 {
         font-size: 2rem;
     }
 
+
+
+
     .lightbox {
-        display:flex !important;
+        display: none;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
         height: 100vh;
         width: 100vw;
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
         background: rgba(0,0,0,0.9);
-        text-align: center;
+        box-sizing: border-box;
+        padding: 0;
     }
+
+    .lightbox-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
     .lightbox img {
-        margin: 0 auto;
-        display: block;
         max-width: 90vw;
         max-height: 80vh;
         object-fit: contain;
+        display: block;
     }
+
+    .prev, .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 2rem;
+        color: white;
+        cursor: pointer;
+    }
+
+    /* Botão dentro do lightbox, só aparece com o lightbox */
+    .popup-back-button {
+        position: absolute;   /* dentro do lightbox */
+        top: 20px;
+        right: 20px;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 10;          /* acima da imagem */
+    }
+    
+   
+    
+
+
+
 
     #bottom-content p {
         font-size: 1rem;

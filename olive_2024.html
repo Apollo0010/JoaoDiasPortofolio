@@ -88,13 +88,18 @@
     </div>
 
 
-     <!-- CLOSE UP GALLERY (popup) -->
+      <!-- Lightbox -->
     <div id="lightbox" class="lightbox">
-        <span class="popup-back-button" onclick="closeLightbox()">BACK</span>
-        <a class="prev" onclick="changeImage(-1)">❮</a>
-        <img id="lightbox-img" src="" alt="">
-        <a class="next" onclick="changeImage(1)">❯</a>
+        <div class="lightbox-content">
+            <a class="prev" onclick="changeImage(-1)">❮</a>
+            <img id="lightbox-img" src="" alt="">
+            <a class="next" onclick="changeImage(1)">❯</a>
+            <span class="popup-back-button" onclick="closeLightbox()">X</span>
+        </div>
     </div>
+
+    <!-- Botão da página normal -->
+    <p class="back-button"><a href="work-index.html"><b>BACK</b></a></p>
     
 
     
