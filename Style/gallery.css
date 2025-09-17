@@ -249,6 +249,175 @@ a {
         cursor: pointer;
         z-index: 10;          /* acima da imagem */
     }
+
+    .back-button {
+   
+    font-size: 25px;                 /* Alinhado ao topo */
+    }
+
+    
+   
+    
+
+
+
+
+    #bottom-content p {
+        font-size: 1rem;
+    }
+}
+
+
+/* Para ecrãs menores que 768px */
+@media (max-width: 576px){
+
+    
+    #top-content h1 {
+        font-size: 2rem;
+    }
+
+
+
+
+    .lightbox {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        background: rgba(0,0,0,0.9);
+        box-sizing: border-box;
+        padding: 0;
+    }
+
+    .lightbox-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+    .lightbox img {
+        max-width: 90vw;
+        max-height: 80vh;
+        object-fit: contain;
+        display: block;
+    }
+
+    .prev, .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 2rem;
+        color: white;
+        cursor: pointer;
+    }
+
+    /* Botão dentro do lightbox, só aparece com o lightbox */
+    .popup-back-button {
+        position: absolute;   /* dentro do lightbox */
+        top: 20px;
+        right: 20px;
+        color: white;
+        font-size: 30px;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 10;          /* acima da imagem */
+    }
+
+    .back-button {
+   
+    font-size: 25px;                 /* Alinhado ao topo */
+    }
+
+    
+   
+    
+
+
+
+
+    #bottom-content p {
+        font-size: 1rem;
+    }
+}
+
+
+
+/* Para ecrãs menores que 768px */
+@media (max-width: 992px){
+
+    
+    #top-content h1 {
+        font-size: 2rem;
+    }
+
+
+
+
+    .lightbox {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        background: rgba(0,0,0,0.9);
+        box-sizing: border-box;
+        padding: 0;
+    }
+
+    .lightbox-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+    .lightbox img {
+        max-width: 90vw;
+        max-height: 80vh;
+        object-fit: contain;
+        display: block;
+    }
+
+    .prev, .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 2rem;
+        color: white;
+        cursor: pointer;
+    }
+
+    /* Botão dentro do lightbox, só aparece com o lightbox */
+    .popup-back-button {
+        position: absolute;   /* dentro do lightbox */
+        top: 20px;
+        right: 20px;
+        color: white;
+        font-size: 30px;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 10;          /* acima da imagem */
+    }
+
+    .back-button {
+   
+    font-size: 25px;                 /* Alinhado ao topo */
+    }
+
     
    
     
